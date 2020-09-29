@@ -1,0 +1,84 @@
+@import '../../theme.css';
+
+.signin-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.signin__card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+  height: 50vh;
+  width: 50vw;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin__card__header > h2 {
+  color: var(--primary-color);
+}
+
+.signin__card__header__icon {
+  color: red;
+}
+
+.signin__card__form {
+  text-align: center;
+}
+
+.signin__card__form > input {
+  display: block;
+  width: 200px;
+  text-align: center;
+  height: 25px;
+  margin: 5px auto;
+  border-color: var(--secondary-color);
+  border-radius: 10px;
+  outline-width: 0;
+  transition: transform 1s;
+}
+
+.signin__card__form > input:focus {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.signin__card__button {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: var(--med-font-size);
+  border: none;
+  font-weight: bold;
+  transition: transform 1s;
+}
+
+.signin__card__button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.signin__card__footer > p {
+  margin-top: 40px;
+  color: var(--primary-color);
+}
+
+.signin__card__footer > p:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.signin__card__loginInfo {
+  color: var(--primary-color);
+  font-size: x-small;
+}

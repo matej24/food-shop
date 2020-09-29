@@ -1,0 +1,27 @@
+@import '../../theme.css';
+
+.footer-container {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  background-color: var(--primary-color);
+  bottom: -100px;
+}
+
+.footer__content {
+  color: var(--secondary-color);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.footer__content__icon {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  color: var(--secondary-color);
+  transition: transform 1s;
+}
+
+.footer__content__icon:hover {
+  transform: scale(1.2);
+}

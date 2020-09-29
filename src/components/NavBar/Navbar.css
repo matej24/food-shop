@@ -1,0 +1,93 @@
+@import '../../theme.css';
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: var(--big-font-size);
+  top: 0;
+  position: sticky;
+}
+
+.nav__logo {
+  margin-left: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav__logo:hover > .nav__logo__icon {
+  color: greenyellow;
+}
+
+.nav__logo__icon {
+  color: red;
+  align-items: center;
+}
+
+.nav__routes {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.nav__item {
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  padding: 0 30px;
+  height: 62px;
+  line-height: 62px;
+  cursor: pointer;
+}
+
+.nav__item:hover {
+  border-bottom: 4px solid var(--secondary-color);
+}
+
+.nav__containerRight {
+  display: flex;
+  padding: 0 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__containerRight > button {
+  margin-left: 20px;
+  height: 40px;
+  text-align: center;
+  width: 100px;
+  font-size: var(--med-font-size);
+  background-color: transparent;
+  color: var(--secondary-color);
+  border-radius: 20px;
+  border: 2px solid var(--secondary-color);
+  transition: transform 2s;
+  cursor: pointer;
+}
+
+.nav__containerRight > button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 20px;
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.1);
+}
+
+.nav__containerRight__cartLogo {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 1.5s;
+}
+
+.nav__containerRight__cartLogo:hover {
+  transform: scale(1.2);
+}
