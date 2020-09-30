@@ -1,0 +1,19 @@
+@import '../../theme.css';
+.food__search {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.food__search > input {
+  text-align: center;
+  width: 400px;
+  border: none;
+  border-bottom: 2px solid #a8a8a8;
+  background-color: transparent;
+  margin-right: 20px;
+  outline-width: 0;
+}
+
+.food__search > input:focus {
+  border-bottom: 2px solid var(--primary-color);
+}

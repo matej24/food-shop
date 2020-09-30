@@ -1,0 +1,112 @@
+@import '../../theme.css';
+
+.food__card {
+  height: 350px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 10px 10px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 2s;
+  background-color: #ededed;
+}
+
+.food__card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.food__card__pic > img {
+  width: 250px;
+}
+
+.food__card > .food__card__pic {
+  transition: transform 2s ease;
+}
+
+.food__card:hover .food__card__pic {
+  transform: scale(1.05);
+}
+
+.food__card__content {
+  line-height: 4px;
+  text-align: center;
+}
+
+.food__card__content > p {
+  margin-left: 6px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.food__card__options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.food__card__options-buyButton {
+  background-color: var(--primary-color);
+  margin-right: 15px;
+  height: 30px;
+  width: 100px;
+  color: var(--secondary-color);
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+  -webkit-transition: background-color 2s; /* For Safari 3.0 to 6.0 */
+  transition: background-color 2s; /* For modern browsers */
+  transition: color 2s;
+  cursor: pointer;
+}
+
+.food__card__options-buyButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.food__card__options-subButton {
+  background-color: var(--primary-color);
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+  color: var(--secondary-color);
+  border-radius: 2px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.food__card__options-subButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.food__card__options-addButton {
+  background-color: var(--primary-color);
+  height: 25px;
+  width: 25px;
+  color: var(--secondary-color);
+  border-radius: 2px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.food__card__options-addButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
