@@ -2,15 +2,15 @@ import React from 'react';
 import { MdShoppingCart } from 'react-icons/md';
 import './FoodCard.css';
 
-const FoodCard = () => {
+const FoodCard = ({ foodPic, foodName, foodPrice }) => {
   return (
     <div className='food__card'>
       <div className='food__card__pic'>
-        <img src='https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872' />
+        <img src={`${foodPic}`} />
       </div>
       <div className='food__card__content'>
-        <p>Nesto {}</p>
-        <p>Price: 30kn</p>
+        <p>{foodName}</p>
+        <p>Price: {foodPrice}kn</p>
       </div>
       <div className='food__card__options'>
         <button className='food__card__options-subButton'>-1</button>

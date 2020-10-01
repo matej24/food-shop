@@ -21,6 +21,7 @@
 
 .food__card__pic > img {
   width: 250px;
+  height: 220px;
 }
 
 .food__card > .food__card__pic {

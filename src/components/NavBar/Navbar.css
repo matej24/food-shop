@@ -12,6 +12,7 @@
   font-size: var(--big-font-size);
   top: 0;
   position: sticky;
+  z-index: 999;
 }
 
 .nav__logo {

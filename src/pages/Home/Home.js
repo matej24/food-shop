@@ -3,11 +3,11 @@ import FoodList from '../../components/FoodList/FoodList';
 import FoodSearch from '../../components/FoodSearch/FoodSearch';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ allFood }) => {
   return (
     <div className='home__page'>
       <FoodSearch />
-      <FoodList />
+      <FoodList allFood={allFood} />
     </div>
   );
 };

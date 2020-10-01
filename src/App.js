@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/NavBar/Navbar';
 import Footer from './components/Footer/Footer';
 import SignIn from './pages/SignIn/SignIn';
 import Home from './pages/Home/Home';
+import axios from './axios';
 import './App.css';
 
 function App() {
   const [isSignIn, setIsSignIn] = useState(true);
+  const [allFood, setAllFood] = useState([]);
+
+  useEffect(() => {
+    axios.get('/food').then((response) => {
+      setAllFood(response.data);
+    });
+  }, []);
+
+  console.log(allFood);
 
   return (
     <div className='App'>
@@ -15,7 +25,7 @@ function App() {
       ) : (
         <>
           <Navbar setIsSignIn={setIsSignIn} />
-          <Home />
+          <Home allFood={allFood} />
           <Footer />
         </>
       )}
