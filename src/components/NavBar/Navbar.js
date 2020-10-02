@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { MdFavorite, MdShoppingCart } from 'react-icons/md';
 
@@ -14,9 +15,15 @@ const Navbar = ({ setIsSignIn }) => {
       </div>
 
       <ul className='nav__routes'>
-        <li className='nav__item'>Home</li>
-        <li className='nav__item'>About</li>
-        <li className='nav__item'>FAQ</li>
+        <li className='nav__item'>
+          <Link to='/'>Home</Link>
+        </li>
+        <li className='nav__item'>
+          <Link to='/orders'>Orders</Link>
+        </li>
+        <li className='nav__item'>
+          <Link to='/about'>About</Link>
+        </li>
       </ul>
 
       <div className='nav__containerRight'>

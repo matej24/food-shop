@@ -63,6 +63,7 @@
   transition: background-color 2s; /* For modern browsers */
   transition: color 2s;
   cursor: pointer;
+  outline-width: 0;
 }
 
 .food__card__options-buyButton:hover {

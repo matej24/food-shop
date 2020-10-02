@@ -3,11 +3,27 @@ import FoodList from '../../components/FoodList/FoodList';
 import FoodSearch from '../../components/FoodSearch/FoodSearch';
 import './Home.css';
 
-const Home = ({ allFood }) => {
+const Home = ({
+  allFood,
+  setSearchFoodValue,
+  searchFoodValue,
+  filteredFood,
+  setCartFood,
+  cartFood,
+}) => {
   return (
     <div className='home__page'>
-      <FoodSearch />
-      <FoodList allFood={allFood} />
+      <FoodSearch
+        setSearchFoodValue={setSearchFoodValue}
+        searchFoodValue={searchFoodValue}
+      />
+      <FoodList
+        allFood={allFood}
+        filteredFood={filteredFood}
+        searchFoodValue={searchFoodValue}
+        setCartFood={setCartFood}
+        cartFood={cartFood}
+      />
     </div>
   );
 };

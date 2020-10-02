@@ -12,8 +12,10 @@
   background-color: transparent;
   margin-right: 20px;
   outline-width: 0;
+  font-weight: 600;
 }
 
 .food__search > input:focus {
   border-bottom: 2px solid var(--primary-color);
+  box-shadow: 0 4px 2px -2px gray;
 }
