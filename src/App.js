@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import SignIn from './pages/SignIn/SignIn';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Cart from './pages/Cart/Cart';
 import axios from './axios';
 import './App.css';
 
@@ -28,7 +29,7 @@ function App() {
     setFilteredFood(result);
   }, [searchFoodValue, allFood]);
 
-  console.log(allFood);
+  console.log(cartFood);
 
   return (
     <div className='App'>
@@ -36,7 +37,7 @@ function App() {
         <SignIn setIsSignIn={setIsSignIn} />
       ) : (
         <>
-          <Navbar setIsSignIn={setIsSignIn} />
+          <Navbar setIsSignIn={setIsSignIn} cartFood={cartFood} />
           <Switch>
             <Route
               path='/'
@@ -54,6 +55,11 @@ function App() {
               )}
             />
             <Route path='/about' exact component={About} />
+            <Route
+              path='/cart'
+              exact
+              render={(props) => <Cart cartFood={cartFood} />}
+            />
           </Switch>
 
           <Footer />

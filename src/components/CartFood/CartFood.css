@@ -1,0 +1,25 @@
+.cartFood-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.cartFood-container > p {
+  margin: 20px 20px;
+}
+
+.cartFood__icon {
+  color: black;
+  font-size: large;
+  cursor: pointer;
+  transition: transform 1s;
+  transition: color 1s;
+}
+
+.cartFood__icon:hover {
+  transform: scale(1.4);
+  color: firebrick;
+}
