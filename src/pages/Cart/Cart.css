@@ -1,3 +1,5 @@
+@import '../../theme.css';
+
 .cart-container {
   display: grid;
   place-items: center;
@@ -52,4 +54,13 @@
 
 .cart__card__bottom > button:hover {
   transform: scale(1.2);
+}
+
+.cart__card__bottom > a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cart__card__bottom > a:hover {
+  color: var(--primary-color);
 }

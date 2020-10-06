@@ -58,7 +58,9 @@ function App() {
             <Route
               path='/cart'
               exact
-              render={(props) => <Cart cartFood={cartFood} />}
+              render={(props) => (
+                <Cart cartFood={cartFood} setCartFood={setCartFood} />
+              )}
             />
           </Switch>
 
