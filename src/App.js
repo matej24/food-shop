@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn/SignIn';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Cart from './pages/Cart/Cart';
+import Orders from './pages/Orders/Orders';
 import axios from './axios';
 import './App.css';
 
@@ -20,16 +21,30 @@ function App() {
     axios.get('/food').then((response) => {
       setAllFood(response.data);
     });
+    getLocalCart();
   }, []);
 
   useEffect(() => {
+    localStorage.setItem('cartFood', JSON.stringify(cartFood));
+  }, [cartFood]);
+
+  useEffect(() => {
     const result = allFood.filter((food) =>
-      food.title.toLowerCase().includes(searchFoodValue)
+      food.title.toLowerCase().includes(searchFoodValue.toLowerCase())
     );
     setFilteredFood(result);
   }, [searchFoodValue, allFood]);
 
-  console.log(cartFood);
+  const getLocalCart = () => {
+    if (localStorage.getItem('cartFood') === null) {
+      localStorage.setItem('cartFood', JSON.stringify([]));
+    } else {
+      let cartLocal = JSON.parse(
+        localStorage.getItem('cartFood', JSON.stringify(cartFood))
+      );
+      setCartFood(cartLocal);
+    }
+  };
 
   return (
     <div className='App'>
@@ -62,6 +77,7 @@ function App() {
                 <Cart cartFood={cartFood} setCartFood={setCartFood} />
               )}
             />
+            <Route path='/orders' exact component={Orders} />
           </Switch>
 
           <Footer />

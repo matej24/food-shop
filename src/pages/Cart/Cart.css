@@ -1,6 +1,6 @@
 @import '../../theme.css';
 
-.cart-container {
+.cart__page {
   display: grid;
   place-items: center;
   height: 100vh;

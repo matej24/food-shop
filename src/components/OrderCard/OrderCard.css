@@ -1,0 +1,30 @@
+.orderCard__card {
+  width: 80%;
+  background-color: #ededed;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.orderCard__card__heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.orderCard__card__heading > h1 {
+  font-size: 1.5em;
+  margin: 0 20px;
+  padding-top: 20px;
+}
+
+.orderCard__card__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.orderCard__card__bottom > p {
+  margin: 0 20px;
+  color: grey;
+}

@@ -1,0 +1,26 @@
+.about__page {
+  display: grid;
+  min-height: 90vh;
+  place-items: center;
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+  height: 50vh;
+  width: 50vw;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__githubIcon {
+  cursor: pointer;
+  color: purple;
+  transition: transform 1s;
+}
+.about__githubIcon:hover {
+  transform: scale(1.5);
+}

@@ -1,0 +1,5 @@
+.orders__page {
+  display: grid;
+  min-height: 90vh;
+  place-items: center;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartFood from '../../components/CartFood/CartFood';
+import Spinner from '../../components/Spinner/Spinner';
 import axios from '../../axios';
 import './Cart.css';
 
@@ -8,28 +9,25 @@ const Cart = ({ cartFood, setCartFood }) => {
   let totalPrice = 0;
   let listOfOrderedFood = [];
 
-  const [orderedFoodList, setOrderedFoodList] = useState('');
+  const [procOrder, setProcOrder] = useState(false);
 
   cartFood.forEach((value) => {
     totalPrice += value.foodPrice * value.numberOfPortions;
   });
 
   const handlePostOrder = () => {
+    setProcOrder(true);
     cartFood.forEach((food) => {
       listOfOrderedFood.push(food.foodName);
     });
     const helperList = listOfOrderedFood.join();
-    setOrderedFoodList(helperList);
-    console.log('ordered list 1.', orderedFoodList);
     const data = {
-      orderedFood: orderedFoodList,
+      orderedFood: helperList,
       totalPrice: totalPrice,
-      time: Date(),
+      time: Date().substring(0, 24),
     };
-    console.log('data', data);
-    // sendPostRequest(data);
-    setOrderedFoodList('');
-    console.log(orderedFoodList);
+    sendPostRequest(data);
+    setTimeout(cleanUp, 3000);
   };
 
   const sendPostRequest = async (newPost) => {
@@ -41,27 +39,36 @@ const Cart = ({ cartFood, setCartFood }) => {
     }
   };
 
+  const cleanUp = () => {
+    setCartFood([]);
+    setProcOrder(false);
+  };
+
   return (
-    <div className='cart-container'>
+    <div className='cart__page'>
       <div className='cart__card'>
         <div className='cart__card__heading'>
           <h3>Bill</h3>
         </div>
         <div className='cart__card__content'>
           <div className='cart__card__content__foodList'>
-            {cartFood.map((food) => {
-              return (
-                <CartFood
-                  key={food.foodId}
-                  foodId={food.foodId}
-                  foodName={food.foodName}
-                  foodPrice={food.foodPrice}
-                  numberOfPortions={food.numberOfPortions}
-                  cartFood={cartFood}
-                  setCartFood={setCartFood}
-                />
-              );
-            })}
+            {!procOrder ? (
+              cartFood.map((food) => {
+                return (
+                  <CartFood
+                    key={food.foodId}
+                    foodId={food.foodId}
+                    foodName={food.foodName}
+                    foodPrice={food.foodPrice}
+                    numberOfPortions={food.numberOfPortions}
+                    cartFood={cartFood}
+                    setCartFood={setCartFood}
+                  />
+                );
+              })
+            ) : (
+              <Spinner />
+            )}
           </div>
         </div>
         <div className='cart__card__price'>
