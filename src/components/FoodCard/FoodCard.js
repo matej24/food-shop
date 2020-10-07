@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import { MdShoppingCart } from 'react-icons/md';
 import './FoodCard.css';
 
-const FoodCard = ({ foodPic, foodName, foodPrice, setCartFood, cartFood }) => {
+const FoodCard = ({
+  foodPic,
+  foodName,
+  foodPrice,
+  setCartFood,
+  cartFood,
+  foodId,
+}) => {
   const [numberOfPortions, setNumberOfPortions] = useState(1);
 
   const handleDecrement = () => {
@@ -15,9 +22,10 @@ const FoodCard = ({ foodPic, foodName, foodPrice, setCartFood, cartFood }) => {
     setCartFood([
       ...cartFood,
       {
-        foodName: foodName,
-        foodPrice: foodPrice,
-        numberOfPortions: numberOfPortions,
+        foodId,
+        foodName,
+        foodPrice,
+        numberOfPortions,
       },
     ]);
   };

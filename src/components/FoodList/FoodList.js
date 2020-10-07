@@ -14,6 +14,7 @@ const FoodList = ({
       return (
         <FoodCard
           key={food._id}
+          foodId={food._id}
           foodName={food.title}
           foodPrice={food.price}
           foodPic={food.image}

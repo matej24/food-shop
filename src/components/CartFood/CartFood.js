@@ -6,11 +6,11 @@ const CartFood = ({
   foodName,
   foodPrice,
   numberOfPortions,
-  cartFood,
   setCartFood,
+  foodId,
 }) => {
   const handleRemoveFood = () => {
-    setCartFood(cartFood.filter((el) => el.id !== cartFood.id));
+    setCartFood((cartFood) => cartFood.filter((el) => el.foodId !== foodId));
   };
 
   return (
