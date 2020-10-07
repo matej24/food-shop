@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CartFood from '../../components/CartFood/CartFood';
 import Spinner from '../../components/Spinner/Spinner';
 import axios from '../../axios';
 import './Cart.css';
 
 const Cart = ({ cartFood, setCartFood }) => {
+  let history = useHistory();
   let totalPrice = 0;
   let listOfOrderedFood = [];
 
@@ -32,8 +33,7 @@ const Cart = ({ cartFood, setCartFood }) => {
 
   const sendPostRequest = async (newPost) => {
     try {
-      const resp = await axios.post('/order', newPost);
-      console.log(resp.data);
+      await axios.post('/order', newPost);
     } catch (err) {
       console.error(err);
     }
@@ -42,6 +42,7 @@ const Cart = ({ cartFood, setCartFood }) => {
   const cleanUp = () => {
     setCartFood([]);
     setProcOrder(false);
+    history.push('/orders');
   };
 
   return (
