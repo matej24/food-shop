@@ -10,7 +10,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios.get('/order').then((response) => {
-      setOrders(response.data);
+      setOrders(response.data.slice(1).slice(-5).reverse());
     });
   }, []);
 
