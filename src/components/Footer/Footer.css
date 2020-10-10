@@ -4,12 +4,12 @@
   position: absolute;
   height: 100px;
   width: 100%;
-  background: rgb(22, 55, 107);
+  background: var(--primary-color);
   background: linear-gradient(
     180deg,
-    rgba(22, 55, 107, 1) 0%,
-    rgba(42, 7, 58, 1) 35%,
-    rgba(22, 55, 107, 1) 100%
+    var(--primary-color) 0%,
+    var(--gradient-color) 35%,
+    var(--primary-color) 100%
   );
 }
 
