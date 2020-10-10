@@ -7,7 +7,13 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  background-color: var(--primary-color);
+  background: rgb(22, 55, 107);
+  background: linear-gradient(
+    180deg,
+    rgba(22, 55, 107, 1) 0%,
+    rgba(42, 7, 58, 1) 35%,
+    rgba(22, 55, 107, 1) 100%
+  );
   color: var(--secondary-color);
   font-size: var(--big-font-size);
   top: 0;

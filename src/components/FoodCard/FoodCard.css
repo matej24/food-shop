@@ -51,6 +51,7 @@
 
 .food__card__options-buyButton {
   background-color: var(--primary-color);
+  font-weight: bold;
   margin-right: 15px;
   height: 30px;
   width: 100px;
