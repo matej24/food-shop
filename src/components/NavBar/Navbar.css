@@ -30,10 +30,6 @@
   font-weight: bold;
 }
 
-.nav__logo:hover > .nav__logo__icon {
-  color: greenyellow;
-}
-
 .nav__logo__icon {
   color: red;
   align-items: center;
