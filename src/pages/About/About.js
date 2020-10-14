@@ -11,6 +11,7 @@ const About = () => {
           Project was made entirely by me, without using 3rd party helpers for
           style
         </p>
+        <p>It is responsive but not mobile frendly! :(</p>
         <p>
           This project serves only as reference to showcase my skills by now
           (oct. 2020)
